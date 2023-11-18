@@ -7,7 +7,9 @@ class Program
         Console.Write("Alma 7:27  ");
         Console.WriteLine("And now, may the peace of God rest upon you, and upon your houses and lands, and upon your flocks and herds, and all that you possess, your women and your children, according to your faith and good works, from this time forth and forever. And thus I have spoken. Amen.");
         string word = "And now, may the peace of God rest upon you, and upon your houses and lands, and upon your flocks and herds, and all that you possess, your women and your children, according to your faith and good works, from this time forth and forever. And thus I have spoken. Amen.";
-
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
+        Console.WriteLine(" ");
         // List<string> Word_Randomizer = new List<string> { "And, now, may, the, peace, of, God, rest, upon, you, and, upon, your, houses, and, lands, and upon your flocks and herds and all that you possess your women and your children according to your faith and good works from this time forth and forever And thus I have spoken Amen" };
 
 
@@ -19,26 +21,29 @@ class Program
 
 
 
-        Console.WriteLine("Please press any key to continue of type 'quit' to end:  ");
+        Console.WriteLine("Please press 'Enter' to continue of type 'quit' to end:  ");
         string response = Console.ReadLine();
 
 
         while (response != "quit")
         {
-            Console.WriteLine("Please press any key to continue of type 'quit' to end:  ");
-            int index = rand.Next(output.Length);
+            Console.WriteLine("");
+            Console.WriteLine("Please press 'Enter' to continue of type 'quit' to end:  ");
+            string response2 = Console.ReadLine();
 
-            output[Array.IndexOf(output, output[index])] = "___";
-
-            string separator = " ";
-
-            string result = String.Join(separator, output);
-            if (response == "y")
+            if (response2 == "")
             {
 
-
-                Console.WriteLine(result);
                 Console.Clear();
+                int index = rand.Next(output.Length);
+
+                output[Array.IndexOf(output, output[index])] = "___";
+
+                string separator = " ";
+
+                string result = String.Join(separator, output);
+                Console.WriteLine(result);
+
             }
             else
             {
