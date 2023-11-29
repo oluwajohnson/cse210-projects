@@ -20,8 +20,8 @@ class Program
     static void countDown(int duration)
     {
         // Console.WriteLine("Duration is" + duration);
-        int period = duration / 3;
-        for (int i = period; i > 0; i--)
+
+        for (int i = duration; i > 0; i--)
         {
 
             Console.Write(i);
@@ -69,7 +69,7 @@ class Program
         // int respond = Console.ReadLine();
         int yourResponse = -1;
 
-        while (yourResponse != 5)
+        while (yourResponse != 4)
         {
 
             Console.WriteLine("Menu Options:  ");
@@ -100,27 +100,36 @@ class Program
                 Console.WriteLine("Get ready....");
                 int myduration = 0;
                 int duration = int.Parse(session);
+
+
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(duration);
+                Thread.Sleep(1000);
                 while (myduration != duration)
                 {
 
 
-                    for (int i = duration / 10; i > 0; i--)
+                    DateTime currentTime = DateTime.Now;
+
+
+                    if (futureTime > currentTime)
                     {
 
 
                         Console.WriteLine("");
                         spinAnimation();
-                        Console.Write("Breathe in...."); countDown(duration); Console.WriteLine("");
-                        Console.Write("Now breathe out...."); countDown(duration);
+                        Console.Write("Breathe in...."); countDown(3); Console.WriteLine("");
+                        Console.Write("Now breathe out...."); countDown(3);
                         Console.WriteLine("");
-                        if (i == 0)
-                        {
-                            Console.WriteLine("");
-                            Console.WriteLine("Well done!!!");
-                            Console.WriteLine("");
-                            Console.WriteLine("You have completed another " + duration + " seconds of the Breathing Activity");
-                            duration = 0;
-                        }
+                    }
+                    else if (futureTime <= currentTime)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Well done!!!");
+                        Console.WriteLine("");
+                        Console.WriteLine("You have completed another " + duration + " seconds of the Breathing Activity");
+                        Console.WriteLine("");
+                        duration = 0;
                     }
 
 
@@ -152,41 +161,52 @@ class Program
                 if (Response2 == "")
                 {
                     Console.WriteLine("Now ponder on each of the following questions as they related to this experience");
-                    Console.Write("You may begin in...."); countDown(10); Console.WriteLine("");
-                    Console.Clear();
-                    int myduration = 0;
-                    int duration = int.Parse(session);
-                    while (myduration != duration)
+                    Console.Write("You may begin in...."); countDown(3); Console.WriteLine("");
+                }
+                Console.Clear();
+                int myduration = 0;
+                int duration = int.Parse(session);
+
+
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(duration);
+                Thread.Sleep(1000);
+
+                while (myduration != duration)
+                {
+
+                    DateTime currentTime = DateTime.Now;
+
+
+                    if (futureTime > currentTime)
                     {
 
 
-                        for (int i = duration; i >= 0; i--)
-                        {
+                        Console.WriteLine("");
 
-
-                            Console.WriteLine("");
-
-                            Console.Write(">How did you feel when it was completed? "); countDown(duration); Console.WriteLine("");
-                            Console.Write(">What is your favourite thing about this experience? "); countDown(duration); Console.WriteLine("");
-                            Console.Write(">Have you ever done anything like this before? "); countDown(duration); Console.WriteLine("");
-                            // Console.Write(">How did you get started? "); countDown(duration); Console.WriteLine("");
-                            // Console.Write(">How did you feel w hen it was complete? "); countDown(duration); Console.WriteLine("");
-                            // Console.Write(">What made this time different than other times when you were not as successful? "); countDown(duration); Console.WriteLine("");
-                            // Console.Write(i);
-                            Console.WriteLine("");
-                            if (i == 0)
-                            {
-                                Console.WriteLine("");
-                                Console.WriteLine("Well done!!!");
-                                Console.WriteLine("");
-                                Console.WriteLine("You have completed another " + duration + " seconds of the Reflecting Activity");
-                                duration = 0;
-                            }
-                        }
-
+                        Console.Write(">How did you feel when it was completed? "); countDown(2); Console.WriteLine("");
+                        Console.Write(">What is your favourite thing about this experience? "); countDown(2); Console.WriteLine("");
+                        Console.Write(">Have you ever done anything like this before? "); countDown(2); Console.WriteLine("");
+                        // Console.Write(">How did you get started? "); countDown(duration); Console.WriteLine("");
+                        // Console.Write(">How did you feel w hen it was complete? "); countDown(duration); Console.WriteLine("");
+                        // Console.Write(">What made this time different than other times when you were not as successful? "); countDown(duration); Console.WriteLine("");
+                        // Console.Write(i);
+                        Console.WriteLine("");
 
                     }
+                    else if (futureTime <= currentTime)
+                    {
+                        Console.WriteLine("");
+                        Console.WriteLine("Well done!!!");
+                        Console.WriteLine("");
+                        Console.WriteLine("You have completed another " + duration + " seconds of the Reflecting Activity");
+                        Console.WriteLine("");
+                        duration = 0;
+                    }
+
+
                 }
+
 
             }
 
@@ -217,37 +237,75 @@ class Program
 
                 int myduration = 0;
 
+
+                DateTime startTime = DateTime.Now;
+                DateTime futureTime = startTime.AddSeconds(duration);
+                Thread.Sleep(1000);
+
+
                 while (myduration != duration)
                 {
 
+                    DateTime currentTime = DateTime.Now;
 
 
 
-                    for (int i = duration; i > 0; i--)
+                    Console.WriteLine("currentTime: " + currentTime);
+                    Console.WriteLine("futureTime: " + futureTime);
+                    if (futureTime > currentTime)
                     {
-
 
                         string session1 = Console.ReadLine();
                         List_response.Add(session1);
 
 
-                        // foreach (string response in List_response)
-                        // {
 
+
+
+
+
+
+
+
+
+                    }
+                    else if (futureTime <= currentTime)
+                    {
                         Console.WriteLine($"You listed {List_response.Count} items");
 
-                        // }
-
                         Console.WriteLine("");
-                        if (i == 0)
-
-
-                            Console.WriteLine("");
                         Console.WriteLine("Well done!!!");
                         Console.WriteLine("");
                         Console.WriteLine("You have completed another " + duration + " seconds of the Listing Activity");
+                        Console.WriteLine("");
                         duration = 0;
                     }
+
+                    // for (int i = duration; i > 0; i--)
+                    // {
+
+
+                    //     string session1 = Console.ReadLine();
+                    //     List_response.Add(session1);
+
+
+                    //     // foreach (string response in List_response)
+                    //     // {
+
+                    //     Console.WriteLine($"You listed {List_response.Count} items");
+
+                    //     // }
+
+                    //     Console.WriteLine("");
+                    //     if (i == 0)
+
+
+                    //         Console.WriteLine("");
+                    //     Console.WriteLine("Well done!!!");
+                    //     Console.WriteLine("");
+                    //     Console.WriteLine("You have completed another " + duration + " seconds of the Listing Activity");
+                    //     duration = 0;
+                    // }
 
                 }
 
