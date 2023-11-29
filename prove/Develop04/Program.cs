@@ -35,17 +35,36 @@ class Program
         }
     }
 
-    static void quit(int duration)
+    // a parent class called Person
+    public class Big
     {
-        ;
-        for (int i = duration; i > 0; i--)
+        private string _discount;
+
+        public Big(string discount)
         {
+            _discount = discount;
+        }
 
-            if (i == 0)
-            {
-                duration = 0;
-            }
+        public string GetName()
+        {
+            return _discount;
+        }
+    }
 
+    // a child class called Student
+    public class Small : Big
+    {
+        private string _number;
+
+        // calling the parent constructor using "base"!
+        public Small(string name, string number) : base(name)
+        {
+            _number = number;
+        }
+
+        public string GetNumber()
+        {
+            return _number;
         }
     }
 
@@ -124,6 +143,10 @@ class Program
                     }
                     else if (futureTime <= currentTime)
                     {
+
+
+                        Small small = new Small("Brigham", "234");
+                        string name = small.GetName();
                         Console.WriteLine("");
                         Console.WriteLine("Well done!!!");
                         Console.WriteLine("");
