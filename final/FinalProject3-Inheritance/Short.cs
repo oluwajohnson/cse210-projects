@@ -5,7 +5,7 @@ public class Short : Event
 
 
     // calling the parent constructor using "base"!
-    public void ShortLecturer(string title, string date, string eventType) : base(name)
+    public Short(string title, string date, string eventType) : base(title, date)
     {
         _eventType = eventType;
 

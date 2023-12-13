@@ -8,19 +8,19 @@ public class Full : Event
     private string _weatherStatement;
 
     // calling the parent constructor using "base"!
-    public void FullLecturer(string title, string description, string date, string time, string address, string eventType, string speakerName, string capacity) : base(name)
+    public void FullLecturer(string title, string description, string date, string time, string address, string eventType, string speakerName, string capacity) : base(title, description, date, time, address)
     {
         _eventType = eventType;
         _speakerName = speakerName;
         _capacity = capacity;
     }
-    public void FullReception(string title, string description, string date, string time, string address, string eventType, string email) : base(name)
+    public void FullReception(string title, string description, string date, string time, string address, string eventType, string email) : base(title, description, date, time, address)
     {
         _eventType = eventType;
         _email = email;
 
     }
-    public void FullReception(string title, string description, string date, string time, string address, string eventType, string weatherStatement) : base(name)
+    public void FullReception(string title, string description, string date, string time, string address, string eventType, string weatherStatement) : base(title, description, date, time, address)
     {
         _eventType = eventType;
         _weatherStatement = weatherStatement;
