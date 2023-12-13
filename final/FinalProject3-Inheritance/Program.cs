@@ -26,7 +26,7 @@ class Program
         Console.WriteLine(date);
         Console.WriteLine(address);
 
-        Full full = new Full("Graduation", "College Student Graduation", "20/12/2023", "BYU Garden");
+        Full full = new Full("Graduation", "College Student Graduation", "20/12/2023", "BYU Garden", "Graduation", "Dean of Faculty", "250", "johns@gmai.com", "Sunny");
         title = full.GetTitle();
         description = full.GetDescription();
         date = full.GetDate();
@@ -49,7 +49,7 @@ class Program
 
 
 
-        Short short = new Short("Graduation", "College Student Graduation", "20/12/2023", "BYU Garden");
+        Short short = new Short("Graduation", "College Student Graduation", "20/12/2023", "BYU Garden", "Graduation");
         title = short.GetTitle();
         description = short.GetDescription();
         date = short.GetDate();
